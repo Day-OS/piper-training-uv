@@ -17,12 +17,15 @@ dependencies = [
     "pytorch-lightning~=1.7.0",
     "torch==2.5.1",
     "torchaudio==2.5.1",
-    "torchmetrics==0.11.4"
+    "torchmetrics==0.11.4",
+    "argparse>=1.4.0",
 ]
 
 
 [tool.taskipy.tasks]
+submodule = "git submodule update --init --recursive"
 build-monotonic-align = 'cd piper/src/python && ./build_monotonic_align.sh'
 preprocess = 'cd piper/src/python && uv run -m piper_train.preprocess'
-train = 'cd piper/src/python && uv run -m piper_train'
+default-train = 'cd piper/src/python && uv run -m piper_train'
+train = 'uv run train.py'
 

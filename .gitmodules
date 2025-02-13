@@ -1,3 +1,4 @@
 [submodule "piper"]
 	path = piper
-	url = https://github.com/rhasspy/piper.git
+	url = https://github.com/Day-OS/piper-training-uv.git
+	branch = piper

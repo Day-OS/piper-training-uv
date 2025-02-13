@@ -350,3 +350,6 @@ class VitsModel(pl.LightningModule):
         parser.add_argument("--n-heads", type=int, default=2)
         #
         return parent_parser
+
+    def lr_scheduler_step(self, scheduler, metric, optimizer_idx, *args, **kwargs):
+        scheduler.step()
